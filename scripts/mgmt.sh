@@ -10,11 +10,12 @@ sudo yum -y install python-pip python-dev
 
 sudo yum -y install git
 
-sudo mkdir /root/.ssh/
+sudo mkdir -p /root/.ssh/
 
 sudo cp -a /vagrant/scripts/id_rsa /root/.ssh/id_rsa
 sudo chmod 600 /root/.ssh/id_rsa
-sudo cat  /vagrant/scripts/authorized_keys >> /root/.ssh/authorized_keys
+
+sudo cp  /vagrant/scripts/authorized_keys  /root/.ssh/authorized_keys
 
 
 cat >> /root/.ssh/config <<EOL
