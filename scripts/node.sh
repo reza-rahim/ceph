@@ -1,16 +1,10 @@
 #!/usr/bin/env bash
 
 
-sudo mkdir /root/.ssh/
-sudo cp -a /vagrant/scripts/id_rsa /root/.ssh/id_rsa
-sudo chmod 600 /root/.ssh/id_rsa
-sudo cat  /vagrant/scripts/authorized_keys >> /root/.ssh/authorized_keys
+sudo mkdir -p /root/.ssh/
 
+sudo cp  /vagrant/scripts/authorized_keys  /root/.ssh/authorized_keys
 
-cat >> /root/.ssh/config <<EOL
-Host *
-  StrictHostKeyChecking no
-EOL
 
 # configure hosts file for our internal network defined by Vagrantfile
 cat > /etc/hosts <<EOL
